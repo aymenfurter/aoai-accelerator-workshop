@@ -1,5 +1,24 @@
 # Tweaking AOAI Accelerator - Workshop
 
+1. **[Accelerator Selection](https://github.com/aymenfurter/aoai-accelerator-workshop/tree/main?tab=readme-ov-file#accelerator-selection)**
+
+2. **[Ingestion Optimization](https://github.com/aymenfurter/aoai-accelerator-workshop/tree/main?tab=readme-ov-file#ingestion-optimization)**
+   - 2.1. [Evaluations](https://github.com/aymenfurter/aoai-accelerator-workshop/tree/main?tab=readme-ov-file#evaluations)
+   - 2.2. [Ingestion Strategy](https://github.com/aymenfurter/aoai-accelerator-workshop/tree/main?tab=readme-ov-file#ingestion-strategy)
+     - 2.2.1. [Layout](https://github.com/aymenfurter/aoai-accelerator-workshop/tree/main?tab=readme-ov-file#layout)
+     - 2.2.2. [Read](https://github.com/aymenfurter/aoai-accelerator-workshop/tree/main?tab=readme-ov-file#read)
+
+3. **[Chunking Strategy](https://github.com/aymenfurter/aoai-accelerator-workshop/tree/main?tab=readme-ov-file#chunking-strategy)**
+
+4. **[Optimize Retrieval](https://github.com/aymenfurter/aoai-accelerator-workshop/tree/main?tab=readme-ov-file#optimize-retrieval)**
+
+5. **[Data Ingestion Process Troubleshooting](https://github.com/aymenfurter/aoai-accelerator-workshop/tree/main?tab=readme-ov-file#data-ingestion-process-troubleshooting)**
+   - 5.1. [Ingestion: Ensuring Accurate Data Ingestion](https://github.com/aymenfurter/aoai-accelerator-workshop/tree/main?tab=readme-ov-file#ingestion-ensuring-accurate-data-ingestion)
+   - 5.2. [Rate Limit](https://github.com/aymenfurter/aoai-accelerator-workshop/tree/main?tab=readme-ov-file#rate-limit)
+   - 5.3. [Document Re-upload](https://github.com/aymenfurter/aoai-accelerator-workshop/tree/main?tab=readme-ov-file#document-re-upload)
+
+
+
 ## Accelerator Selection
 Ensure you are utilizing the appropriate accelerator. There are various options available for different scenarios. An overview can be found [here](https://github.com/Azure-Samples/chat-with-your-data-solution-accelerator?tab=readme-ov-file#when-should-you-use-this-repo).
 
@@ -115,7 +134,12 @@ As you can observe, this text contains numerous `<p>` tags. These can be effortl
         "pageFooter": None,
 -        "paragraph": "p",
     }
- ```  
+ ```
+
+**Sample data**
+```html
+Microsoft Surface Surface Book User Guide With Windows 10 Published: September 2016 Version 2.0 c 2016 Microsoft Microsoft Surface Surface 2016 Microsoft. All rights reserved. Blue Track Technology, Microsoft, OneNote, Outlook, PowerPoint, OneDrive, Windows, Xbox, and Xbox Live are registered trademarks of Microsoft Corporation. Surface and Skype are trademarks of Microsoft Corporation. Bluetooth is a registered trademark of Bluetooth SIG, Inc. Dolby and the double-D symbol are registered trademarks of Dolby Laboratories. This document is provided "as-is." Information in this document, including URL and other Internet website references, may change without notice. c 2016 Microsoft Page ii Microsoft Surface Contents Surface Meet Surface Book 1 SURFACE BOOK FEATURES. 1 Set up your Surface Book 4 CHARGE YOUR SURFACE BOOK 4 SET UP WINDOWS 5 CHOOSE A MODE TO WORK IN 5 The basics 7 POWER AND CHARGING 7 Check the battery level. 7 Making your battery last. 8 POWER STATES: ON, OFF, SLEEP, AND RESTART 8 TOUCH, KEYBOARD, PEN, AND MOUSE. 9 Touchscreen 9 Keyboard . 9 Touchpad or mouse. 10 Surface Pen (Surface Pro 4 version) 11 Accounts and signing in 11 FIRST ACCOUNT ON YOUR SURFACE 11 SIGN IN TO YOUR SURFACE. 11 USE WINDOWS HELLO 12 CHANGE YOUR PASSWORD, PICTURE, AND OTHER ACCOUNT SETTINGS 12 ADD AN ACCOUNT TO YOUR SURFACE 12 CREATE A CHILD ACCOUNT ON YOUR SURFACE. 13 Get to know Windows 10
+```
 
 ## Chunking Strategy
 Having tested various ingestion strategies for our data, the next aspect to refine is the chunking strategy. Our options include:
