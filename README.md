@@ -31,6 +31,7 @@ There are different chunking strategies available. These strategies define how t
 
 ## Evaluations
 <img src="https://github.com/aymenfurter/aoai-accelerator-workshop/blob/main/compare.png?raw=true">
+
 Before we start doing any changes, I recommend performing a baseline test using [@pamelafox](https://www.github.com/pamelafox)'s [https://github.com/Azure-Samples/ai-rag-chat-evaluator](https://github.com/aymenfurter/ai-rag-chat-evaluator). 
 
 
