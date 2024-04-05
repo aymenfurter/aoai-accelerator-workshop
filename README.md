@@ -2,7 +2,7 @@
 
 1. **[Accelerator Selection](https://github.com/aymenfurter/aoai-accelerator-workshop/tree/main?tab=readme-ov-file#accelerator-selection)**
 
-2. **[Ingestion Optimization](https://github.com/aymenfurter/aoai-accelerator-workshop/tree/main?tab=readme-ov-file#ingestion-optimization)**
+2. **[Ingestion](https://github.com/aymenfurter/aoai-accelerator-workshop/tree/main?tab=readme-ov-file#ingestion)**
    - 2.1. [Evaluations](https://github.com/aymenfurter/aoai-accelerator-workshop/tree/main?tab=readme-ov-file#evaluations)
    - 2.2. [Ingestion Strategy](https://github.com/aymenfurter/aoai-accelerator-workshop/tree/main?tab=readme-ov-file#ingestion-strategy)
      - 2.2.1. [Layout](https://github.com/aymenfurter/aoai-accelerator-workshop/tree/main?tab=readme-ov-file#layout)
@@ -10,9 +10,9 @@
 
 3. **[Chunking Strategy](https://github.com/aymenfurter/aoai-accelerator-workshop/tree/main?tab=readme-ov-file#chunking-strategy)**
 
-4. **[Optimize Retrieval](https://github.com/aymenfurter/aoai-accelerator-workshop/tree/main?tab=readme-ov-file#optimize-retrieval)**
+4. **[Retrieval](https://github.com/aymenfurter/aoai-accelerator-workshop/tree/main?tab=readme-ov-file#retrieval)**
 
-5. **[Data Ingestion Process Troubleshooting](https://github.com/aymenfurter/aoai-accelerator-workshop/tree/main?tab=readme-ov-file#data-ingestion-process-troubleshooting)**
+5. **[Troubleshooting](https://github.com/aymenfurter/aoai-accelerator-workshop/tree/main?tab=readme-ov-file#troubleshooting)**
    - 5.1. [Ingestion: Ensuring Accurate Data Ingestion](https://github.com/aymenfurter/aoai-accelerator-workshop/tree/main?tab=readme-ov-file#ingestion-ensuring-accurate-data-ingestion)
    - 5.2. [Rate Limit](https://github.com/aymenfurter/aoai-accelerator-workshop/tree/main?tab=readme-ov-file#rate-limit)
    - 5.3. [Document Re-upload](https://github.com/aymenfurter/aoai-accelerator-workshop/tree/main?tab=readme-ov-file#document-re-upload)
@@ -25,7 +25,7 @@ Ensure you are utilizing the appropriate accelerator. There are various options 
 ## Accelerator Deployment
 The deployment steps are detailed [here](https://github.com/Azure-Samples/chat-with-your-data-solution-accelerator/tree/main?tab=readme-ov-file#deploy-instructions). Alternatively, you can use the `azd up` command to deploy the application.
 
-# Ingestion Optimization
+# Ingestion
 
 There are different chunking strategies available. These strategies define how the document is split up and indexed into the Vector database (Azure AI Search). 
 
@@ -155,7 +155,7 @@ The size of the chunks also plays a critical role. Larger chunks provide a broad
 
 Feel free to experiment with these options, execute evaluations, and compare the outcomes.
 
-# Optimize Retrieval
+# Retrieval
 Now that we have tested out different options on the ingestion, we can also work on the retrieval part. First of all, the accelerator doesn't use semantic ranker. (See: https://learn.microsoft.com/en-us/azure/search/semantic-how-to-configure?tabs=portal)
 We can easily add semantic ranker by altering the QuestionAnswerTool (see: https://github.com/Azure-Samples/chat-with-your-data-solution-accelerator/blob/63810762d5752e7c25967f5e922fbed51c5fc442/code/backend/batch/utilities/tools/QuestionAnswerTool.py#L32)
 
@@ -251,7 +251,7 @@ Return at least 3 versions of the question. (comma separated)"""
 Depending on the size of the index, the type of data, and latency requirements, different techniques may work. Again, we can test out different approaches and compare them using the evaluator: [https://github.com/Azure-Samples/ai-rag-chat-evaluator](https://github.com/aymenfurter/ai-rag-chat-evaluator)
 
 
-# Data Ingestion Process Troubleshooting
+# Troubleshooting
 
 ## Ingestion: Ensuring Accurate Data Ingestion
 
