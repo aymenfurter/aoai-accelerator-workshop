@@ -103,6 +103,19 @@ My forked version allows pointing the evaluator repository to the accelerator. T
 
 The `ai-rag-chat-evaluator` project provides detailed insights into performing validations, emphasizing the importance of clearly defining the questions that your AI application needs to address. For more information, refer to the [relevant section in the README](https://github.com/Azure-Samples/ai-rag-chat-evaluator?tab=readme-ov-file#generating-ground-truth-data).
 
+Pro TIP: You'll need to configure a pf connection to make the evaluations run.
+
+```yaml
+$schema: https://azuremlschemas.azureedge.net/promptflow/latest/AzureOpenAIConnection.schema.json
+name: Default_AzureOpenAI
+type: azure_open_ai
+api_key: "<replacem>"
+api_base: "https://<replaceme>.openai.azure.com/"
+api_type: azure
+api_version: "2023-05-15"
+```
+ $ pf connection create --file azure_openai_connection.yaml
+ 
 ## Ingestion Strategy
 > [!NOTE]
 > Markdown output is not yet implemented in the accelerator! There is currently logic that "translates" the output to HTML. See the implementation [here](https://github.com/Azure-Samples/chat-with-your-data-solution-accelerator/blob/9b182ab1ab0c94734075e325114e33fe46058052/code/backend/batch/utilities/helpers/AzureFormRecognizerHelper.py#L43). For more details on output to markdown format, check out the [official documentation](https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/concept-layout?view=doc-intel-4.0.0#output-to-markdown-format).
